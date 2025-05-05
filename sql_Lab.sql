@@ -28,3 +28,26 @@ SELECT DISTINCT release_year FROM film;
  ORDER BY length DESC
  LIMIT 10;
  
+ 
+ 
+ SELECT COUNT(ISNULL(NULL))  FROM FILM;	
+ 
+ 
+SELECT 
+    title,
+    CASE 
+        WHEN rental_duration IS NULL THEN 'Not Available'
+        ELSE "AVALIBLE" 
+    END AS rental_duration
+FROM film
+ORDER BY title ASC;
+
+
+ SELECT date_format(rental_date, "%M" ) as mon,
+ date_format(rental_date, "%W")as weekend, 
+ rental_id
+ FROM rental;
+ 
+ 
+ 
+ 
